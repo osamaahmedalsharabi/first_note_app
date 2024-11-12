@@ -8,43 +8,58 @@ class CustomNoteWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      height: MediaQuery.sizeOf(context).height * 0.25,
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(bottom: 8),
+      height: MediaQuery.sizeOf(context).height * 0.21,
       width: double.infinity,
       decoration: BoxDecoration(
           color: Colors.amber, borderRadius: BorderRadius.circular(16)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          ListTile(
-            title: const Padding(
-              padding: EdgeInsets.symmetric(vertical: 15.0),
-              child: Text(
-                "Flutter Tips",
-                style: TextStyle(fontSize: 28, color: Colors.black),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Flutter tips",
+                    style: TextStyle(fontSize: 28, color: Colors.black),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.sizeOf(context).width * 0.65,
+                      maxHeight: MediaQuery.sizeOf(context).height * 0.15,
+                    ),
+                    child: Text(
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 4,
+                      "dkslfjsdlfkj sdjflksda flasdf saldkf asld d skjdf sldfj dslfkj s dkslfjsdlfkj sdjflksda flasdf saldkf asld d skjdf sldfj dslfkj sd",
+                      style: TextStyle(
+                          fontSize: 18, color: Colors.black.withOpacity(0.5)),
+                    ),
+                  )
+                ],
               ),
-            ),
-            subtitle: const Text(
-              maxLines: 4,
-              overflow: TextOverflow.ellipsis,
-              "lskdjfds sdlkfjds fsdlf sadf as;ldfkj asdf sadlfj saf saldfj sd;f asdf jasdlf asdfj asfd sadf aosdf sadfjoiaslfjas dsd flkasjdf adsa lfjdsaf dsalf jdslaf sd"
-              "lskdjfds sdlkfjds fsdlf sadf as;ldfkj asdf sadlfj saf saldfj sd;f asdf jasdlf asdfj asfd sadf aosdf sadfjoiaslfjas dsd flkasjdf adsa lfjdsaf dsalf jdslaf sd",
-              style: TextStyle(color: Colors.black),
-            ),
-            trailing: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.delete,
-                  color: Colors.black,
-                  size: 32,
-                )),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.delete,
+                    size: 32,
+                    color: Colors.black,
+                  ))
+            ],
           ),
-          const Padding(
-            padding: EdgeInsets.only(right: 35.0),
-            child: Text(
-              '2024-1-15',
-              style: TextStyle(color: Colors.black, fontSize: 18),
-            ),
+          const Spacer(),
+          Text(
+            "2024-1-15",
+            style:
+                TextStyle(fontSize: 18, color: Colors.black.withOpacity(0.5)),
           )
         ],
       ),

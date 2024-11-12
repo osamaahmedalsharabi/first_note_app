@@ -7,17 +7,13 @@ class NoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            children: [
-              CustomAppBarWidget(),
-              CustomListNoteBuilderWidget(),
-            ],
-          ),
-        ),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.0),
+      child: Column(
+        children: [
+          CustomAppBarWidget(),
+          CustomListNoteBuilderWidget(),
+        ],
       ),
     );
   }
