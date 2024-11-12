@@ -21,25 +21,20 @@ class CustomTextFieldWidget extends StatelessWidget {
           hintStyle: const TextStyle(
             color: Color(0xff63FFDA),
           ),
-          enabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(15),
-            ),
-            borderSide: BorderSide(
-              color: Color(0xff63FFDA),
-              style: BorderStyle.solid,
-            ),
-          ),
-          focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(15),
-            ),
-            borderSide: BorderSide(
-              color: Color(0xff63FFDA),
-              style: BorderStyle.solid,
-            ),
-          ),
+          enabledBorder: buildBorder(),
+          focusedBorder: buildBorder(),
         ),
+      ),
+    );
+  }
+  OutlineInputBorder buildBorder() {
+    return const OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(15),
+      ),
+      borderSide: BorderSide(
+        color: Colors.white,
+        style: BorderStyle.solid,
       ),
     );
   }
