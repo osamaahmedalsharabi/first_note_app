@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CustomAppBarWidget extends StatelessWidget {
@@ -23,7 +22,7 @@ class CustomAppBarWidget extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10)),
             child: IconButton(
               icon: const Icon(

@@ -9,6 +9,3 @@ class NoteView extends StatelessWidget {
     return const NoteViewBody();
   }
 }
-
-
-
