@@ -6,7 +6,7 @@ class CustomTextFieldWidget extends StatelessWidget {
   const CustomTextFieldWidget({
     super.key,
     required this.hintText,
-    required this.maxLines,
+    this.maxLines = 1,
   });
 
   @override
@@ -22,18 +22,19 @@ class CustomTextFieldWidget extends StatelessWidget {
             color: Color(0xff63FFDA),
           ),
           enabledBorder: buildBorder(),
-          focusedBorder: buildBorder(),
+          focusedBorder: buildBorder(const Color(0xff63FFDA)),
         ),
       ),
     );
   }
-  OutlineInputBorder buildBorder() {
-    return const OutlineInputBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(15),
+
+  OutlineInputBorder buildBorder([color]) {
+    return OutlineInputBorder(
+      borderRadius: const BorderRadius.all(
+        Radius.circular(10),
       ),
       borderSide: BorderSide(
-        color: Colors.white,
+        color: color ?? Colors.white,
         style: BorderStyle.solid,
       ),
     );

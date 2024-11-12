@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBarWidget extends StatelessWidget {
+  final String title;
+  final IconData icon;
   const CustomAppBarWidget({
     super.key,
+    required this.title, required this.icon,
   });
 
   @override
@@ -14,10 +17,10 @@ class CustomAppBarWidget extends StatelessWidget {
         children: [
           SizedBox(
             width: MediaQuery.sizeOf(context).width * 0.3,
-            child: const FittedBox(
+            child: FittedBox(
                 child: Text(
-              "Note App",
-              style: TextStyle(fontSize: 1500),
+              title,
+              style: const TextStyle(fontSize: 1500),
             )),
           ),
           Container(
@@ -25,8 +28,8 @@ class CustomAppBarWidget extends StatelessWidget {
                 color: Colors.white.withOpacity(0.05),
                 borderRadius: BorderRadius.circular(10)),
             child: IconButton(
-              icon: const Icon(
-                Icons.search,
+              icon:  Icon(
+                icon,
                 size: 32,
               ),
               onPressed: () {},
