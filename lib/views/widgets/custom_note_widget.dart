@@ -8,6 +8,7 @@ class CustomNoteWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 16),
       height: MediaQuery.sizeOf(context).height * 0.25,
       width: double.infinity,
       decoration: BoxDecoration(
