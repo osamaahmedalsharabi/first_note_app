@@ -17,8 +17,8 @@ class EditViewBodyWidget extends StatelessWidget {
             title: "Edit Note",
             icon: Icons.done,
           ),
-          CustomTextFieldWidget(hintText: "title"),
-          CustomTextFieldWidget(
+          CustomTextFormFieldWidget(hintText: "title"),
+          CustomTextFormFieldWidget(
             hintText: "content",
             maxLines: 5,
           ),
