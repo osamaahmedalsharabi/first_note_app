@@ -13,12 +13,13 @@ class CustomFormWIdget extends StatefulWidget {
 
 class _CustomFormWIdgetState extends State<CustomFormWIdget> {
   GlobalKey<FormState> formKey = GlobalKey();
-  AutovalidateMode va = AutovalidateMode.disabled;
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   String? title, description;
   @override
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
+      autovalidateMode: autoValidateMode,
       child: Column(
         children: [
           CustomTextFormFieldWidget(
@@ -42,7 +43,7 @@ class _CustomFormWIdgetState extends State<CustomFormWIdget> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
               } else {
-                va = AutovalidateMode.always;
+                autoValidateMode = AutovalidateMode.always;
                 setState(() {});
               }
             },
