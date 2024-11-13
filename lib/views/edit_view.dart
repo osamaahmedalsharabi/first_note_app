@@ -1,5 +1,4 @@
-import 'package:first_note_app/views/widgets/custom_app_bar_widget.dart';
-import 'package:first_note_app/views/widgets/custom_text_field_widget.dart';
+import 'package:first_note_app/views/widgets/edit_view_body_widget.dart';
 import 'package:flutter/material.dart';
 
 class EditView extends StatelessWidget {
@@ -9,19 +8,7 @@ class EditView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
         child: Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          children: [
-            CustomAppBarWidget(
-              title: "Edit Note",
-              icon: Icons.done,
-            ),
-            CustomTextFieldWidget(hintText: "title"),
-            CustomTextFieldWidget(hintText: "content" ,  maxLines: 5,),
-          ],
-        ),
-      ),
+      body: EditViewBodyWidget(),
     ));
   }
 }

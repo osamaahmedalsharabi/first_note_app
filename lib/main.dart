@@ -1,4 +1,3 @@
-import 'package:first_note_app/views/edit_view.dart';
 import 'package:first_note_app/views/note_view.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class NoteApp extends StatelessWidget {
         useMaterial3: false,
         brightness: Brightness.dark,
       ),
-      home: const EditView(),
+      home: const NoteView(),
     );
   }
 }
