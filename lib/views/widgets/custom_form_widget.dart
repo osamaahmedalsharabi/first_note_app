@@ -45,7 +45,7 @@ class _CustomFormWIdgetState extends State<CustomFormWIdget> {
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                BlocProvider.of<AddNoteCubitCubit>(context).addNote(NoteModel(
+                BlocProvider.of<AddNoteCubit>(context).addNote(NoteModel(
                     title: title!,
                     description: description!,
                     oncreate: DateTime.now().toString()));

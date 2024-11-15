@@ -17,21 +17,20 @@ class CustomModelButtomSheetWidget extends StatelessWidget {
       height: MediaQuery.sizeOf(context).height * 0.5,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16),
-        child: SingleChildScrollView(
-          child: BlocConsumer<AddNoteCubitCubit, AddNoteCubitState>(
-            listener: (context, state) {
-              if (state is AddNoteCubitFailure) {
-                log(state.errorMessage.toString());
-              } else {
-                Navigator.pop(context);
-              }
-            },
-            builder: (context, state) {
-              return ModalProgressHUD(
-                  inAsyncCall: state is AddNoteCubitLoading ? true : false,
-                  child: const CustomFormWIdget());
-            },
-          ),
+        child: BlocConsumer<AddNoteCubit, AddNoteCubitState>(
+          listener: (context, state) {
+            if (state is AddNoteCubitFailure) {
+              log(state.errorMessage.toString());
+            }
+            if (state is AddNoteCubitSuccesed) {
+              Navigator.pop(context);
+            }
+          },
+          builder: (context, state) {
+            return ModalProgressHUD(
+                inAsyncCall: state is AddNoteCubitLoading ? true : false,
+                child: const SingleChildScrollView(child: CustomFormWIdget()));
+          },
         ),
       ),
     );
