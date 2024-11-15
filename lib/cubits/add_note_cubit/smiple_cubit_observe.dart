@@ -1,26 +1,38 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MyBlocObserver extends BlocObserver {
+class MyBlocObserver implements BlocObserver {
   @override
-  void onEvent(Bloc bloc, Object? event) {
-    super.onEvent(bloc, event);
+  void onChange(BlocBase bloc, Change change) {
+    // TODO: implement onChange
+  }
+
+  @override
+  void onClose(BlocBase bloc) {
+    log("on Close bloc = $bloc");
+    // TODO: implement onClose
+  }
+
+  @override
+  void onCreate(BlocBase bloc) {
+    // TODO: implement onCreate
+    log("on Create bloc = $bloc");
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    super.onError(bloc, error, stackTrace);
+    // TODO: implement onError
   }
 
   @override
-  void onChange(BlocBase bloc, Change change) {
-    super.onChange(bloc, change);
-    debugPrint("change = $change");
+  void onEvent(Bloc bloc, Object? event) {
+    // TODO: implement onEvent
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
-    super.onTransition(bloc, transition);
-    // TODO: implement onChange
+    // TODO: implement onTransition
   }
 }
